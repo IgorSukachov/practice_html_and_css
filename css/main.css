@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Скачиваем с Google fonts и копируем ссылку(которая выше) и прописываем font-family */
+@import url(./body.css);
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+h1 {
+    color: rgb(211, 164, 255);
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    
+    /* короткая запись font, это font: normal 16px 'Roboto", sans-serif; */
+}
+
+.img {
+    width: 200px;
+    height: 200px; 
+    /* в html мы писали свойство так width='200' с равно вместо : */
+    border-radius: 50%;
+    box-shadow: 4px 4px 14px rgb(211, 164, 255, 25);
+    object-fit: cover;
+    object-position: top;
+
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info p {
+    color: blue;
+    margin: 0;
+    font-style: italic;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.2rem;
+    /* text-transform: uppercase; */
+}
+
+.info-text {
+    margin-left: 40px;
+}
+
+/* box model */
+.social {
+    max-width: 1180px;
+    background:rgb(211, 164, 255, 25%);
+    /* 
+    padding: 15px 20px верх низ
+    padding 15px 10px 5px 6px идет по часовой стрелки
+    */
+    padding: 10px 10px 0px 10px;
+    margin: 20px;
+    border: 5px solid rgb(231, 213, 248);
+    border-bottom-style: dotted;
+    border-top-width: 5px;
+    border-right-color: rgb(154, 154, 255);
+}
+
+.social h2 {
+    text-align: center;
+}
+
+/* 
+Если мы хотим применять свойства только для вложеных дивов с классом на данный момент flex-model, то пишем .flex-model > div
+А если полностью всех и так же вложенных, то .flex-model div
+*/
+.float-model > div {
+    float: left;
+    background-color: black;
+    height: 100px;
+    width: 25%;
+    border: 5px solid orange;
+    /* box-sizing: border-box; */
+}
+
+.a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    width: 100%;
+    /* background-color: rgb(255, 217, 0); */
+    text-decoration: none;
+}
+
+.link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: azure;
+}
+
+.a .link::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #cacacb;
+    position: absolute;
+    left: -50%;
+    border-radius: 50%;
+    transform-origin: center;
+    transition: all .2s cubic-bezier(.56, .2, .25, 1);
+    transform: scale(0) translateY(-50%);
+}
+
+.a .link:hover:before {
+    transform: scale(1) translateY(-50%);
+    background: #6f6fff;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: rgb(113 125 135);
+}
+
+.link:active {
+    text-transform: uppercase;
+    color: brown;
+}
+
+.card {
+    text-align: center;
+    background: linear-gradient(rgb(255, 164, 164, 20%), rgb(79, 79, 184, 20%));
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.list {
+    padding: 0 20px;
+}
+
+.list li {
+    color: rgb(0, 118, 124);
+    /* border-bottom: 1px solid grey; */
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding-bottom: 10px;
+}
+
+.table td:nth-child(2) {
+    color: rgb(0, 102, 0);
+}
+
+.table tr:nth-child(even) {
+    /* 
+    перевод:
+    even - четный
+    odd - нечетный
+    */
+    background-color: blanchedalmond;
+}
+
+.list-hobby {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.list-hobby li {
+    margin-bottom: 10px;
+}
+
+.contact {
+    background-color: rgb(211, 164, 255, 30%);
+    padding-bottom: 20px;
+}
+
+.form-group label {
+    /* 
+    Есть два вида элементов: строчные и блочные
+    строчные: span, strong, q, sub, sup, img, i, iframe, cite, label, a
+    блочные: blockquote, dd, dl, dt, div, form, li, nav, ol, option, p, ul, table.
+    */
+    display: block;
+    font-size: 20px;
+    color: green;
+}
+
+.form-group input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(231, 254, 255, 0.25);
+    color: black;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: inherit;
+    /* inherit = означает, что он будет наследоваться */
+}
+
+.row {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row > .form-group {
+    width: 50%;
+}
+
+.row > .form-group:first-child {
+    margin-left: 20px;;
+}
+
+.row > .form-group:last-child {
+    margin-right: 20px;;
+}
+
+.row > .form-group:first-child {
+    /* или для последнего элемента :last-child и свойство margin-right 0; */
+    margin-right: 20px;
+} 
+
+.btn {
+    padding: 20px 50px;
+    color: yellow;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: 0.7s ease-in;
+    opacity: 0.5;
+}
+
+.inputs {
+    display: flex;
+}
+
+.inputs div {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.inputs label {
+    padding: 10px;
+    font-size: large;
+}
+
+.position {
+    position: relative;
+    border: 4px solid black;
+    margin-top: 40px;
+    padding: 20px;
+    height: 20px;
+}
+
+.box {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(253, 204, 139);
+    border-radius: 50%;
+}
+
+.box div {
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: rgb(48, 29, 4);
+}

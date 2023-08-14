@@ -1,0 +1,8 @@
+body {
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin: 0 auto; */
+}
+
+/* Иерархия стилей по повышению 1) свойство элемента в body 2) свойство самому элементу 3) свойство прописанное элементе в html*/
